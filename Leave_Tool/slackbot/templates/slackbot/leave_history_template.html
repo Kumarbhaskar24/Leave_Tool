@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leave History</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Leave History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Type of Leave</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Leave Count</th>
+                <th>Leave Balance</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in leave_history %}
+            <tr>
+                <td>{{ record.type_of_leave }}</td>
+                <td>{{ record.start_date }}</td>
+                <td>{{ record.end_date }}</td>
+                <td>{{ record.leave_count }}</td>
+                <td>{{ record.leave_balance }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
